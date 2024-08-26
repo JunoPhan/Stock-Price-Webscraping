@@ -7,12 +7,12 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 url_netflix ="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/labs/project/netflix_data_webpage.html"
-url ="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/labs/project/amazon_data_webpage.html"
+url_amazon ="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0220EN-SkillsNetwork/labs/project/amazon_data_webpage.html"
 
-data = requests.get(url).text
+data_amazon = requests.get(url).text
 data_netflix = requests.get(url_netflix).text
 
-soup = BeautifulSoup(data, 'html.parser') 
+soup = BeautifulSoup(data_amazon, 'html.parser') 
 soup1 = BeautifulSoup(data_netflix,'html.parser')
 
 amazon_data = pd.DataFrame(columns=["Date", "Open", "High", "Low", "Close","Adj Close", "Volume"])
